@@ -53,10 +53,10 @@ export async function scrap(page: Page) {
     let compare = compareTwoArrays(numbers, last_numbers);
     let time = Date.now() - timeout;
 
-    if (compare && time > 30000) {
+    if (compare && time > 35000) {
       last_numbers = [];
     
-      //ijsertar todo menos el primero
+      //ijsertar todo menos el ultimo
 
       for (let i = 0; i < numbers.length- 1; i++) {
         last_numbers.push(numbers[i]);
@@ -65,7 +65,7 @@ export async function scrap(page: Page) {
       timeout = Date.now()
     }
     else{
-      if (compare && time < 30000) {
+      if (compare && time < 35000) {
         console.log('numbers are the same');
         return
       }
